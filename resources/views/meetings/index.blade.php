@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <h1>Meetings</h1>
-        <a href="{{ route('meetings.create') }}" class="btn btn-primary">Create Meeting</a>
+        <a href="{{ route('meetings.create') }}" class="btn btn-primary">Add Meeting</a>
         @if(session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
@@ -28,7 +28,7 @@
                         <td>{{ $meeting->subject }}</td>
                         <td>{{ $meeting->date_time }}</td>
                         <td>
-                            <a href="{{ route('meetings.edit', $meeting) }}" class="btn btn-sm btn-warning">Edit</a>
+                            <a href="{{ route('meetings.edit', $meeting) }}" class="btn btn-sm btn-warning">Update</a>
                             <form action="{{ route('meetings.destroy', $meeting) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
